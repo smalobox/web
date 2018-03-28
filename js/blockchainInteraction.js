@@ -307,8 +307,7 @@ var CONTRACT 			= [];
 				console.log(res);
 			}else{
 				console.log(err);
-				console.log("Please reload the page. You maybe changed the account and did not reload.");
-				location.reload();
+				
 			}
 		});
 	});
