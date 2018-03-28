@@ -301,16 +301,4 @@ var CONTRACT 			= [];
 		CONTRACT.push(contractABI.at(contractAddress[i]));
 	}
 
-	document.getElementById('rentBTN').addEventListener("click", function() {
-		console.log(web3.eth.accounts[0]);
-		CONTRACT[0].rent.sendTransaction({from: web3.eth.accounts[0], value: web3.toWei(0.001,"ether")}, (err, res) => {
-			if(!err){
-				console.log(res);
-			}else{
-				console.log(err);
-				
-			}
-		});
-	});
-
 });
