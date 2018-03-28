@@ -1,12 +1,8 @@
 window.addEventListener('load', function() {
 
 	// set provider
-	if (typeof web3 !== 'undefined') {
-		web3 = new Web3(web3.currentProvider);
-	} else {
-	  // set the provider you want from Web3.providers
 	  web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/PCx3uNGj3ABrJ38Cdl4Q"));
-	}
+	
 
 	console.log(web3);
 
@@ -310,13 +306,15 @@ var CONTRACT 			= [];
 		console.log(CONTRACT[i]);
 	}
 
-	// CONTRACT[0].owner((_err,_resp) =>  {
-	// 	if(_err != null){
-	// 		console.log(_err);
-	// 	}else{
-	// 		console.log(_resp);
-	// 	}
-	// });
-	
+	console.log(web3.eth.blockNumber);
+/*
+	 CONTRACT[0].owner((_err,_resp) =>  {
+	 	if(_err != null){
+	 		console.log(_err);
+	 	}else{
+	 		console.log(_resp);
+	 	}
+	 });
+*/	
 
 });
