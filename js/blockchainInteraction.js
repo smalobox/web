@@ -1,8 +1,8 @@
 window.addEventListener('load', function() {
 
 	// set provider
-	web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/PCx3uNGj3ABrJ38Cdl4Q"));
-
+	//web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/PCx3uNGj3ABrJ38Cdl4Q"));
+	web3 = new Web3(new Web3.providers.HttpProvider(web3.currentProvider);
 
 	// set up all the contract interaction
 	var contractABI 		= web3.eth.contract(
@@ -302,6 +302,7 @@ var CONTRACT 			= [];
 	}
 
 	document.getElementById('rentBTN').addEventListener("click", function() {
+		console.log(web3.eth.accounts[0]);
 		CONTRACT[0].rent.sendTransaction({from: web3.eth.accounts[0], value: web3.toWei(0.001,"ether")}, (err, res) => {
 			if(!err){
 				console.log(res);
