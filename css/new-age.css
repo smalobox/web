@@ -240,6 +240,13 @@ section.download .badges .badge-link img {
   }
 }
 
+section.getBox {
+  list-style: none;
+  text-align: center;
+  color: #8a8a8a;
+  margin: 0;
+}
+
 section.features .section-heading {
   margin-bottom: 100px;
 }
@@ -440,4 +447,108 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 .btn-xl {
   font-size: 11px;
   padding: 15px 45px;
+}
+
+#pricing {
+  width: 989px;
+  margin: 100px auto;
+  font-family: 'Open Sans', Helvetica;
+}
+
+.price_card {
+  width: 300px;
+  background: white;
+  display: inline-table;
+  top: 0;
+}
+
+.price_card:not(:last-child) {
+  margin-right: 40px;
+}
+
+.header {
+  color: white;
+}
+
+.alpha .header {
+  background: #f5a623;
+}
+
+.bravo .header {
+  background: #f64d4d;
+}
+
+.charlie .header {
+  background: #30dbb5;
+}
+
+.price {
+  width: 100%;
+  font-size: 60px;
+  font-weight: 300;
+  display: block;
+  text-align: center;
+  padding: 30px 0 10px;
+}
+
+.name {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  padding: 0 0 30px;
+}
+
+.features {
+  list-style: none;
+  text-align: center;
+  color: #8a8a8a;
+  margin: 0;
+  padding: 0;
+}
+
+.features li {
+  margin: 0 35px;
+  padding: 20px 15px;
+  width: 200px;
+}
+
+.features li:not(:last-child) {
+  border: 1px solid #f2f2f2;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+button {
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  height: 40px;
+  width: 200px;
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 20px auto 35px;
+}
+
+.alpha button {
+  background: #f5a623;
+}
+
+.bravo button {
+  background: #f64d4d;
+}
+
+.charlie button {
+  background: #30dbb5;
+}
+
+.tip {
+  font-family: 'Indie Flower';
+  position: absolute;
+  color: #757575;
+  margin: 10px 5px;
 }
