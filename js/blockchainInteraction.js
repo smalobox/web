@@ -2,9 +2,7 @@ window.addEventListener('load', function() {
 
 	// set provider
 	  web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/PCx3uNGj3ABrJ38Cdl4Q"));
-	
 
-	console.log(web3);
 
 	// set up all the contract interaction
 	var contractABI 		= web3.eth.contract(
@@ -298,23 +296,13 @@ window.addEventListener('load', function() {
 		);
 var contractAddress    	= ['0xe2698baa693aac31ed1cc12a8c7f1234ae405a6e'];
 var CONTRACT 			= [];
-	// get contract object for each address
-
+	// get contract object for each address;
 	for(i =0; i < contractAddress.length; i++){
 		CONTRACT.push(contractABI.at(contractAddress[i]));
-		console.log(contractAddress[i]);
-		console.log(CONTRACT[i]);
 	}
 
-	console.log(web3.eth.blockNumber);
-/*
-	 CONTRACT[0].owner((_err,_resp) =>  {
-	 	if(_err != null){
-	 		console.log(_err);
-	 	}else{
-	 		console.log(_resp);
-	 	}
+	 CONTRACT[0].owner((_err,_resp) => {
+	 	console.log(_resp);
 	 });
-*/	
 
 });
