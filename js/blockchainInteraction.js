@@ -1,7 +1,7 @@
-window.addEventListener('load', function() {
+// window.addEventListener('load', function() {
 
 	// set provider
-	web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/PCx3uNGj3ABrJ38Cdl4Q"));
+	var web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/PCx3uNGj3ABrJ38Cdl4Q"));
 	//web3 = new Web3(new Web3.providers.HttpProvider(web3.currentProvider);
 
 	// set up all the contract interaction
@@ -329,21 +329,29 @@ var CONTRACT 			= [];
 		CONTRACT.push(contractABI.at(contractAddress[i]));
 	}
 
-  const owner = CONTRACT[0].owner();
-	console.log(`owner: ${owner}`);
+	checkStatus();
 
-  const timeNow = Date.now();
-  console.log(`time now is: ${timeNow}`);
+	function checkStatus () {
+    const owner = CONTRACT[0].owner();
+    console.log(`owner: ${owner}`);
 
-  const endtime = (CONTRACT[0].endTimestamp()) * 1000;
-  console.log(`end time is ${endtime}`);
+    const timeNow = Date.now();
+    console.log(`time now is: ${timeNow}`);
 
-  if (timeNow > endtime) {
-    document.getElementById("boxState").innerHTML = '<i class="fas fa-check" style="color:green" />';
-  	console.log('available');
-	} else {
-    document.getElementById("boxState").innerHTML = '<i class="fas fa-times" style="color:red" />';
-    console.log('in use');
+    const endtime = (CONTRACT[0].endTimestamp()) * 1000;
+    console.log(`end time is ${endtime}`);
+
+    if (timeNow > endtime) {
+      document.getElementById("boxState").innerHTML = '<i class="fas fa-check" style="color:green" />';
+      console.log('available');
+    } else {
+      document.getElementById("boxState").innerHTML = '<i class="fas fa-times" style="color:red" />';
+      console.log('in use');
+    }
 	}
 
-});
+	setInterval(checkStatus, 10000);
+
+
+
+// });
