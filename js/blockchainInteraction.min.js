@@ -311,10 +311,10 @@ var CONTRACT 			= [];
   console.log(`end time is ${endtime}`);
 
   if (timeNow > endtime) {
-    document.getElementById("boxState").innerHTML = '<i class="fas fa-check" />';
+    document.getElementById("boxState").innerHTML = '<i class="fas fa-check" style="color:green" />';
   	console.log('available');
 	} else {
-    document.getElementById("boxState").innerHTML = '<i class="fas fa-times" />';
+    document.getElementById("boxState").innerHTML = '<i class="fas fa-times" style="color:red" />';
     console.log('in use');
 	}
 
