@@ -301,4 +301,21 @@ var CONTRACT 			= [];
 		CONTRACT.push(contractABI.at(contractAddress[i]));
 	}
 
+  const owner = CONTRACT[0].owner();
+	console.log(`owner: ${owner}`);
+
+  const timeNow = Date.now();
+  console.log(`time now is: ${timeNow}`);
+
+  const endtime = (CONTRACT[0].endTimestamp()) * 1000;
+  console.log(`end time is ${endtime}`);
+
+  if (timeNow > endtime) {
+    document.getElementById("boxState").innerHTML = '<i class="fas fa-check" />';
+  	console.log('available');
+	} else {
+    document.getElementById("boxState").innerHTML = '<i class="fas fa-times" />';
+    console.log('in use');
+	}
+
 });
